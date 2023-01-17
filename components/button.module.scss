@@ -1,0 +1,21 @@
+.vintageButton {
+  background-color: #EBECFE;
+  font-size: 14px;
+  padding: 7px;
+  border: double gray 3px;
+  border-radius: 5px;
+  box-shadow: 3px 3px 1px lightgray;
+  &:hover {
+    border: solid black 3px;
+    background-color: #EBECFE;
+    cursor: pointer;
+  }
+  &:active {
+    background-color: #A7AEFB;
+    border: solid black 3px;
+    text-shadow: 0px 0px 7px #FDF9CD;
+    color: white;
+    box-shadow: 1px 1px 1px darkgray;
+    transform: translateY(2px);
+  }
+}

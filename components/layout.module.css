@@ -1,0 +1,8 @@
+.heading {
+    background-color: #FDF9CD;
+    border: 30px solid;
+    border-image: url('/img/vintage-border-1.svg') 35 round;
+    font-family: 'Cinzel Decorative';
+    font-size: 25px;
+    font-weight: 700;
+}

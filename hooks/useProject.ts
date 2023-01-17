@@ -7,7 +7,7 @@ const emptyProject = {
   description: "",
 };
 
-const useProject = (init: Project = emptyProject) => {
+const useProject = () => {
   const createProject = async (newProject: Project): Promise<Project> => {
     const response = await axios.post(
       "http://localhost:8000/api/v1/project/new",

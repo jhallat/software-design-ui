@@ -4,10 +4,12 @@ import InputItemBox from "../../components/input-item-box";
 import styles from "../../styles/Home.module.css";
 import { PageContainer } from "../../components/page-container";
 import { useRouter } from "next/router";
+import useProject from "../../hooks/useProject";
 
 export default function Home() {
   const router = useRouter();
   const { id } = router.query;
+  const projectService = useProject();
   const [requirements, setRequirements] = useState<string[]>([]);
 
   const handleAddRequirement = (item: string) => {

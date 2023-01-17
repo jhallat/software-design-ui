@@ -1,19 +1,12 @@
-import {
-  Box,
-  Button,
-  ButtonGroup,
-  Modal,
-  Paper,
-  styled,
-  TextareaAutosize,
-  TextField,
-  Typography,
-} from "@mui/material";
+import { Box, Modal, styled, TextField } from "@mui/material";
 import { useRouter } from "next/router";
 import { PageContainer } from "../components/page-container";
 import { useState } from "react";
 import useProject from "../hooks/useProject";
 import { Project } from "../models/Project";
+import { Layout } from "../components/layout";
+import { BorderedContainer } from "../components/bordered-container";
+import { Button } from "../components/button";
 
 export default function Home() {
   const dialogBoxStyle = {
@@ -65,47 +58,48 @@ export default function Home() {
     router.push(`/requirements/${createdProject._id}`);
   };
 
-  const CenteredPaper = styled(Paper)({
+  const centered = {
     marginRight: "auto",
     marginLeft: "auto",
-    padding: 50,
-    width: 400,
-    marginTop: 100,
-  });
+    padding: "50px",
+    width: "400px",
+    marginTop: "100px",
+  };
 
   return (
-    <>
-      <CenteredPaper>
+    <Layout>
+      <BorderedContainer style={centered} title="Projects">
         <PageContainer>
           <Button onClick={handleNewProjectDialog}>Create New Project</Button>
           <Button>Load Existing Project</Button>
         </PageContainer>
-      </CenteredPaper>
+      </BorderedContainer>
       <Modal open={newProjectOpen}>
         <Box sx={dialogBoxStyle}>
-          <DialogHeading>Create New Project</DialogHeading>
-          <PageContainer>
-            <TextField
-              onChange={handleNewProjectName}
-              label="New Project Name"
-              value={newProject.name}
-              fullWidth
-            />
-            <TextField
-              label="Description"
-              fullWidth
-              multiline
-              rows={5}
-              onChange={handleNewProjectDescription}
-              value={newProject.description}
-            />
-            <ButtonGroup>
-              <Button onClick={handleCreateNewProject}>Create</Button>
-              <Button>Cancel</Button>
-            </ButtonGroup>
-          </PageContainer>
+          <BorderedContainer title="Create Project">
+            <PageContainer>
+              <TextField
+                onChange={handleNewProjectName}
+                label="New Project Name"
+                value={newProject.name}
+                fullWidth
+              />
+              <TextField
+                label="Description"
+                fullWidth
+                multiline
+                rows={5}
+                onChange={handleNewProjectDescription}
+                value={newProject.description}
+              />
+              <div>
+                <Button onClick={handleCreateNewProject}>Create</Button>
+                <Button>Cancel</Button>
+              </div>
+            </PageContainer>
+          </BorderedContainer>
         </Box>
       </Modal>
-    </>
+    </Layout>
   );
 }

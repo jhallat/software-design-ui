@@ -1,0 +1,22 @@
+.outerBorder {
+    border: solid black 2px;
+    margin: 0px;
+    padding: 0px;
+}
+
+.innerBorder {
+    border: solid gray 1px;
+    margin: 2px;
+    padding: 2px;
+}
+
+.title {
+    border: dotted black 2px;
+    border-radius: 6px;
+    margin-bottom: 6px;
+    padding: 6px;
+    pading-left: 8px;
+    font-family: 'Cinzel Decorative';
+    font-size: 15px;
+    font-weight: 700;
+}
